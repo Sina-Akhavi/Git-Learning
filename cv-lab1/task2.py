@@ -20,3 +20,4 @@ img = plt.imread('./masoleh_gray.jpg')
 concatenated_img = np.concatenate((img, img[::-1]), axis=0)
 plt.imshow(concatenated_img, cmap='gray')
 plt.show()
+
