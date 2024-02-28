@@ -175,12 +175,91 @@ Z = np.array([[7,7],[8,8],[9,9]])
 # print("A=", A)
 
 # ----------------------- ravel vs flatten -----------------------
-A = np.array([[1, 2], [3, 5], [9, 9]])
+# A = np.array([[1, 2], [3, 5], [9, 9]])
+#
+# a1 = A.flatten() # altering a1 does not affect A
+# a1[1] = -13
+# print("A=\n", A)
+#
+# a2 = A.ravel() # altering a2 does affect A
+# a2[1] = -13
+# print("A=\n", A)
 
-a1 = A.flatten() # altering a1 does not affect A
-a1[1] = -13
-print("A=\n", A)
 
-a2 = A.ravel() # altering a2 does affect A
-a2[1] = -13
+# ----------------------------- Numpy arrays vs. numpy matrices -----------------------------
+A = np.array([[1, 2, 3],
+              [4, 1, 9],
+              [2, 2, 2]])
+
+B = np.array([[2, 3],
+              [4, 5],
+              [5, 5]])
+
+print("A * A =\n", A * A)
+
+
+print("A.dot(A)=\n", A.dot(A))
+
+print("A @ A=\n", A @ A)
+
+print("----------------------------")
+
+# print("A * B =\n", A * B)
+#
+# print("A.dot(B)=\n", A.dot(B))
+#
+# print("A @ B=\n", A @ B)
+
+# print("A.dot(B)=\n", A.dot(B))
+#
+# print("A @ B=\n", A @ B)
+
+# M = np.mat(A)
+# print("M * M=\n", M * M)
+# print("type of M ", type(M))
+
+# ------------------------ matrix ------------------------
+M = np.matrix(np.arange(12).reshape(2, 6))
+
+print("M=\n", M)
+# print("M.I * M=\n", M.I @ M)
+
+print(f'M.A=\n{M.A}\n\n type of M is {type(M)}')
+print("type of M.A=", type(M.A))
+
+# ------------------- N-dimensional array -------------------
+# A = np.arange(24).reshape((2, 3, 4))
+# print("A=\n", A)
+#
+# a = A[:, :, 2]
+# print("a=\n", a)
+#
+# a = [[-1, -1, -1],
+#      [-2, -2, -2]]
+#
+# A[:, :, 2] = [[-1, -1, -1], [-2, -2, -2]]
+# print("A=\n", A)
+#
+# print(f'A[:, 1,:]=\n', A[:, 1, :])
+#
+# print(A[:, 2, 1])
+# print(A[:, 2, 2])
+
+# --------------------- Broadcasting ---------------------
+c = np.array([1, 2, 3])
+print(f'c -c = {c -c}')
+
+print(f'c -c.reshape((3, 1))= \n{c - c.reshape((3, 1)) }')
+print(f'c -c.reshape((-1, 1))= \n{c - c.reshape((-1, 1)) }')
+print(f'c.reshape((-1, 1))={c.reshape((-1, 1))}')
+print(f'c - c[:, np.newaxis]=\n{c - c[:, np.newaxis]}')
+print(f'c - c[:, None]=\n{c - c[:, None]}')
+
+A = np.arange(8)
 print("A=\n", A)
+print(f'A - c.reshape((3, 1))=\n {A - c.reshape((3, 1))}')
+
+# ---------------------- Broadcasting: Advanced ----------------------
+A = np.arange(24).reshape((2,3,4))
+print("A=\n", A)
+print("A - np.array([1,2,3,4])=", A - np.array([1,2,3,4]))
