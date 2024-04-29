@@ -50,6 +50,6 @@ C = [[1, 0, 0],
      [0, 0, 0.5],
      [0, 1 / 3.0, 0]]
 
-# print(mul(A, B))
-# print(mul(B,A))
-# print(mul(A,C))
+print(mul(A, B))
+print(mul(B,A))  # m x n    a * q
+print(mul(A,C))
