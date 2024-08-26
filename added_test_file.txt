@@ -1,4 +1,4 @@
-This is the first line in master branch
-second line in CEH branch
-1
-2
+CEH: added first line
+These changes occurred in local CEH
+Third in CEH
+Fourth in CEH
