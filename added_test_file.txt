@@ -1,2 +1,5 @@
 CEH: added first line
 These changes occurred in local CEH
+
+Questions:
+1. How is programming?
