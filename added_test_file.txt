@@ -1,2 +1,2 @@
 CEH: added first line
-Thses changes occurred in local CEH
+These changes occurred in local CEH
